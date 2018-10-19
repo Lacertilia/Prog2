@@ -11,6 +11,12 @@ public class World {
     private int rows;
     private int columns;
 
+    public World(int rows, int columns){
+        this.rows = rows;
+        this.columns = columns;
+        this.size = columns * rows;
+    }
+
     private void generateWorld(){
 
     }
