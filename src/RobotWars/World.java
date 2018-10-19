@@ -18,8 +18,4 @@ public class World {
     private void tick(){
 
     }
-
-    private void draw(){
-
-    }
 }
