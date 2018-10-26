@@ -14,6 +14,11 @@ public class World {
         this.rows = rows;
         this.columns = columns;
         this.size = columns * rows;
+        for(int i = 0; i<size; i++){
+            if(i<rows){
+               this.places[i] = 'X';
+            }
+        }
     }
 
     private void generateWorld(){

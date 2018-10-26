@@ -10,6 +10,11 @@ public class Out {
     }
 
     public void output(char[] p){
-
+        for(int i = 0; i<rows; i++){
+            for(int k = 0; k<columns; k++){
+                System.out.println(p[(k+i*columns)]);
+            }
+            System.out.println("\n");
+        }
     }
 }

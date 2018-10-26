@@ -11,4 +11,8 @@ public class Wall extends Object {
     public boolean isSolid(){
         return true;
     }
+
+    public char getRender(){
+        return this.render;
+    }
 }

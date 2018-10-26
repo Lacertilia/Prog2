@@ -43,6 +43,8 @@ public class Controller implements Runnable{
         out.output(world.getBoard());
     }
 
+
+
     private int calcTicks() throws InputMismatchException{
         Scanner scan = new Scanner(System.in);
         int i = scan.nextInt();

@@ -1,7 +1,7 @@
 package RobotWars;
 
 public class LightRobot extends Robot {
-    public LightRobot(){
-
+    public LightRobot(int pos){
+        super(pos);
     }
 }

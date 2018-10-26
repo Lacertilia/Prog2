@@ -1,7 +1,7 @@
 package RobotWars;
 
 public class DarkRobot extends Robot {
-    public DarkRobot(){
-
+    public DarkRobot(int pos){
+        super(pos);
     }
 }
