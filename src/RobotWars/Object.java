@@ -13,4 +13,8 @@ public abstract class Object {
     public boolean isSolid(){
         return false;
     }
+
+    public abstract char getRender();
+
+    public abstract int getPosition();
 }

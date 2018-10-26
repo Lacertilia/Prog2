@@ -9,4 +9,11 @@ public class Light extends Object {
         this.render = 'L';
     }
 
+    public char getRender(){
+        return this.render;
+    }
+
+    public int getPosition(){
+        return this.position;
+    }
 }

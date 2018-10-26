@@ -15,4 +15,8 @@ public class Wall extends Object {
     public char getRender(){
         return this.render;
     }
+
+    public int getPosition(){
+        return this.position;
+    }
 }

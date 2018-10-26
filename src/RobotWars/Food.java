@@ -12,4 +12,12 @@ public class Food extends Object {
     public int getValue(){
         return this.value;
     }
+
+    public char getRender(){
+        return this.render;
+    }
+
+    public int getPosition(){
+        return this.position;
+    }
 }

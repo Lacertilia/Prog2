@@ -14,9 +14,14 @@ public class World {
         this.rows = rows;
         this.columns = columns;
         this.size = columns * rows;
-        for(int i = 0; i<size; i++){
-            if(i<rows){
-               this.places[i] = 'X';
+        this.objects = new Object[size];
+        this.places = new char[size];
+        for(int i = 0; i < size; i++){
+            if(i%columns == 0 || i%columns+1 == columns || i/rows == 0 || i/rows+1 == rows){
+                objects[i] = new Wall(i);
+                this.places[i] = objects[i].getRender();
+            }else{
+                this.places[i] = ' ';
             }
         }
     }
@@ -30,7 +35,7 @@ public class World {
     }
 
     public char[] getBoard(){
-        return places;
+        return this.places;
     }
 
     public void checkFood(){
