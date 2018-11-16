@@ -10,9 +10,8 @@ public abstract class Object {
         }
     }
 
-    public boolean isSolid(){
-        return false;
-    }
+    public abstract boolean isSolid();
+
 
     public abstract char getRender();
 

@@ -7,7 +7,8 @@ public abstract class Robot {
     private int targetPos;
 
     public Robot(int pos){
-
+        this.pos = pos;
+        this.energy = 10;
     }
 
     private void findFood(){

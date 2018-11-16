@@ -9,6 +9,11 @@ public class Light extends Object {
         this.render = 'L';
     }
 
+    @Override
+    public boolean isSolid() {
+        return true;
+    }
+
     public char getRender(){
         return this.render;
     }

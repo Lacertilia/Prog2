@@ -34,6 +34,8 @@ public class World {
 
     public void tick(){
 
+
+
     }
 
     public char[] getBoard(){
@@ -41,7 +43,15 @@ public class World {
     }
 
     public void checkFood(){
-
+        boolean food = false;
+        for(int i = 0; i<this.size; i++) {
+            if (this.places[i] == 'B') {
+                food = true;
+            }
+        }
+        if(!food){
+            placeFood();
+        }
     }
 
     public void placeFood(){

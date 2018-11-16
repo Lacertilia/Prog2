@@ -9,6 +9,10 @@ public class Food extends Object {
         this.render = 'B';
     }
 
+    public boolean isSolid(){
+        return false;
+    }
+
     public int getValue(){
         return this.value;
     }
