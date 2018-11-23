@@ -28,8 +28,17 @@ public abstract class Robot {
         if(targetPos == 0){
             findFood(w);
         }
-        if(){
-            
+        if(pos%(w.length/rows) < targetPos){
+            pos++;
+        }
+        if(pos%(w.length/rows) > targetPos){
+            pos--;
+        }
+        if(pos/rows < targetPos){
+            pos+=(w.length/rows);
+        }
+        if(pos/rows > targetPos){
+            pos-=(w.length/rows);
         }
     }
 
@@ -42,4 +51,17 @@ public abstract class Robot {
     }
 
     public abstract char getRender();
+
+    public int getPos(){
+        return this.pos;
+    }
+
+    public int getTargetPos(){
+        return this.targetPos;
+    }
+
+    public void setTargetPos(){
+            targetPos = 0;
+
+    }
 }

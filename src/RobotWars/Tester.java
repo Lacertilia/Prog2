@@ -7,7 +7,8 @@ public class Tester {
 
 
         o.output(w.getBoard());
-        w.checkFood();
+        w.tick();
+        o.output(w.getBoard());
 
     }
 }

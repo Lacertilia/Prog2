@@ -37,31 +37,35 @@ public class World {
         do{
             r = (int) (Math.random() * size);
 
-            if(this.places[r] != ' '){
-
-            }else{
+            if(this.places[r] == ' '){
                 robots[0] = new DarkRobot(r);
                 this.places[r] = robots[0].getRender();
                 set = true;
             }
         }while(!set);
+        set = false;
         do{
-            set = false;
+
             r = (int) (Math.random() * size);
 
-            if(this.places[r] != ' '){
-
-            }else{
+            if(this.places[r] == ' '){
                 robots[1] = new LightRobot(r);
                 this.places[r] = robots[1].getRender();
                 set = true;
             }
+
+
         }while(!set);
     }
 
     public void tick(){
         for(int i = 0; i<robots.length; i++){
             robots[i].move(places, rows);
+            if(robots[i].getPos() == robots[i].getTargetPos()){
+                for(int k = 0; k<robots.length; k++){
+                    robots[k].setTargetPos();
+                }
+            }
         }
     }
 
@@ -83,14 +87,14 @@ public class World {
 
     public void placeFood(){
         int p;
+        boolean set = false;
         do{
             p = (int) (Math.random() * size);
-            if(this.places[p] != ' '){
-
-            }else{
+            if(this.places[p] == ' '){
                 objects[p] = new Food(p, 70);
                 places[p] = objects[p].getRender();
+                set = true;
             }
-        }while(p%columns == 0 || p%columns+1 == columns || p/rows == 0 || p/rows+1 == rows);
+        }while(!set);
     }
 }
