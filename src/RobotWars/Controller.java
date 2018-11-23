@@ -70,4 +70,8 @@ public class Controller implements Runnable{
             }
         }
     }
+
+    public static void main(String[] args) {
+        Controller c = new Controller(50, 50);
+    }
 }

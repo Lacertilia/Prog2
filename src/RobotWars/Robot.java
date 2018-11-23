@@ -11,12 +11,26 @@ public abstract class Robot {
         this.energy = 10;
     }
 
-    private void findFood(){
+    private void findFood(char[] w){
+        boolean found = false;
+        int i = 0;
+        do{
+            if(w[i] == 'B'){
+                targetPos = i;
+                found = true;
+            }
+            i++;
 
+        }while(!found);
     }
 
-    private void move(){
-
+    public void move(char[] w, int rows){
+        if(targetPos == 0){
+            findFood(w);
+        }
+        if(){
+            
+        }
     }
 
     private void update(){
@@ -26,4 +40,6 @@ public abstract class Robot {
     private void idle(){
 
     }
+
+    public abstract char getRender();
 }
