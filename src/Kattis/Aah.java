@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Aah {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
         String jon;
         String doc;
-        Scanner scan = new Scanner(System.in);
         jon = scan.next();
         doc = scan.next();
         if(jon.length()>=doc.length()){

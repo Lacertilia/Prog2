@@ -28,16 +28,16 @@ public abstract class Robot {
         if(targetPos == 0){
             findFood(w);
         }
-        if(pos%(w.length/rows) < targetPos){
+        if(pos%(w.length/rows) < targetPos/(w.length/rows)){
             pos++;
         }
-        if(pos%(w.length/rows) > targetPos){
+        if(pos%(w.length/rows) > targetPos%(w.length/rows)){
             pos--;
         }
-        if(pos/rows < targetPos){
+        if(pos/rows < targetPos/rows){
             pos+=(w.length/rows);
         }
-        if(pos/rows > targetPos){
+        if(pos/rows > targetPos/rows){
             pos-=(w.length/rows);
         }
     }

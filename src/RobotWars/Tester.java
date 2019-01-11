@@ -1,14 +1,20 @@
 package RobotWars;
 
 public class Tester {
+    private static int r = 10;
+    private static int c = 10;
+
     public static void main(String[] args) {
-        World w = new World(50, 50);
-        Out o = new Out(50, 50);
+        World w = new World(c, r);
+        Out o = new Out(c, r);
 
 
         o.output(w.getBoard());
-        w.tick();
-        o.output(w.getBoard());
+        for(int i = 0; i<10; i++){
+            w.tick();
+            o.output(w.getBoard());
+        }
+
 
     }
 }

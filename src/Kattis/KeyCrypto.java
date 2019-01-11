@@ -1,8 +1,31 @@
 package Kattis;
 
+
 public class KeyCrypto {
     public static void main(String[] args) {
 
+        int r;
+        String right = "";
+        int l = right.length();
+        boolean notRight = true;
+        String out = "";
+        int guesses = 0;
+        while(notRight){
+            out = "";
+            for (int i = 0; i < l; i++) {
+                r = (int) (Math.random() * 25);
+                out += toChar(r);
+            }
+            if(out.equalsIgnoreCase(right)){
+                notRight = false;
+            }
+            guesses++;
+            if(guesses%100000000 == 0){
+                System.out.println("" + guesses);
+            }
+
+        }
+        System.out.println("Done: " + out + " " + guesses + " Gissningar");
     }
     private int toInt(char n) {
         switch (n) {
@@ -64,7 +87,7 @@ public class KeyCrypto {
         }
     }
 
-    private char toChar(int i){
+    private static char toChar(int i){
         switch(i){
             case 0:
                 return 'A';

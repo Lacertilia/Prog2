@@ -9,6 +9,7 @@ public class World {
     private Object[] objects;
     private int rows;
     private int columns;
+    private int wantFood = 2;
 
     public World(int columns, int rows){
         this.rows = rows;
@@ -30,8 +31,9 @@ public class World {
                 this.places[i] = ' ';
             }
         }
-        this.placeFood();
-        this.placeFood();
+        for(int i = 0; i<wantFood; i++){
+            this.placeFood();
+        }
         int r;
         boolean set = false;
         do{
@@ -59,14 +61,20 @@ public class World {
     }
 
     public void tick(){
+        int[] c = new int[robots.length];
         for(int i = 0; i<robots.length; i++){
+            c[i] = robots[i].getPos();
             robots[i].move(places, rows);
             if(robots[i].getPos() == robots[i].getTargetPos()){
                 for(int k = 0; k<robots.length; k++){
                     robots[k].setTargetPos();
                 }
+
             }
+            places[c[i]] = ' ';
+            places[robots[i].getPos()] = robots[i].getRender();
         }
+        checkFood();
     }
 
     public char[] getBoard(){
@@ -74,13 +82,13 @@ public class World {
     }
 
     public void checkFood(){
-        boolean food = false;
+        int food = 0;
         for(int i = 0; i<this.size; i++) {
             if (this.places[i] == 'B') {
-                food = true;
+                food++;
             }
         }
-        if(!food){
+        if(food<wantFood){
             placeFood();
         }
     }

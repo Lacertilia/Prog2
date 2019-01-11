@@ -4,35 +4,36 @@ import java.util.Scanner;
 
 public class Apaxiaaaans {
 
-
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String in = scan.next(), output = "";
-        char lookingAt, nextChar, lastOut;
+        String in, out = "";
+        in = scan.next();
+        String inM = in;
 
-        for(int i = 0; (i+1)<in.length(); i++){
-            lookingAt = in.charAt(i);
-            nextChar = in.charAt((i+1));
-            if(lookingAt == nextChar){
-                if(i == 0){
-                    output += lookingAt;
-                }else if(output.charAt((output.length()-1)) != lookingAt){
-                    output += lookingAt;
+        for(int i = 0; i<in.length(); i++){
+            if(inM.length() > 1 && inM.charAt(0) == inM.charAt(1)){
+                boolean hasNext = true;
+                for(int k = 1;hasNext; k++){
+                    if(k+1 <inM.length() && inM.charAt(k) != inM.charAt(k+1)){
+                        hasNext = false;
+                        out += inM.charAt(0);
+                        inM = inM.substring(k+1);
+                    }else if(k+1 == inM.length()){
+                        hasNext = false;
+                        out += inM.charAt(0);
+                        inM = "";
+                        i = in.length();
+                    }
                 }
+            }else if(inM.length() == 1){
+                out += inM;
+                i = in.length();
             }else{
-                output = output + nextChar;
+                out += inM.charAt(0);
+                inM = inM.substring(1);
             }
-        }
-        lookingAt = in.charAt(in.length()-1);
-        nextChar = in.charAt((in.length()-2));
-        if(lookingAt == nextChar){
-            if(output.charAt((output.length()-1)) != lookingAt){
-                output += lookingAt;
-            }
-        }else{
-            output = output + lookingAt;
         }
 
-        System.out.println(output);
+        System.out.println("" + out);
     }
 }
