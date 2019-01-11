@@ -1,7 +1,5 @@
 package Kryptering;
 
-import javax.swing.*;
-
 public class CMDInput {
     public static void main(String[] args) {
         switch(args.length){
