@@ -1,5 +1,7 @@
 package Kryptering;
 
+import javax.swing.*;
+
 public class CMDInput {
     public static void main(String[] args) {
         switch(args.length){
@@ -12,9 +14,20 @@ public class CMDInput {
             case 2:
                 try{
                     int i = Integer.parseInt(args[0]) + Integer.parseInt(args[1]);
-                }catch(){
-
+                }catch(NumberFormatException e){
+                    System.out.println("Oof");
+                    System.exit(2);
                 }
+                break;
+            case 3:
+                for(int i = args.length - 1; i>=0; i--){
+                    System.out.println(args[i]);
+                }
+                break;
+            default:
+                System.out.println("Vill inte!");
+                break;
         }
+
     }
 }
