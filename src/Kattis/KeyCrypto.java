@@ -5,7 +5,7 @@ public class KeyCrypto {
     public static void main(String[] args) {
 
         int r;
-        String right = "";
+        String right = "Hejsa";
         int l = right.length();
         boolean notRight = true;
         String out = "";
@@ -25,7 +25,15 @@ public class KeyCrypto {
             }
 
         }
-        System.out.println("Done: " + out + " " + guesses + " Gissningar");
+        if(guesses<1000){
+            System.out.println("Done: " + out + " " + guesses + " Gissningar");
+        }else if(guesses<1000000){
+            String guess = String.valueOf(guesses);
+            System.out.println("Done: " + out + " " + guess.substring(0, guess.length()-3) + " " + guess.substring(guess.length()-3) + " Gissningar");
+        }else{
+            String guess = String.valueOf(guesses);
+            System.out.println("Done: " + out + " " + guess.substring(0, guess.length()-6) + " " + guess.substring(guess.length()-6, guess.length()-3) + " " + guess.substring(guess.length()-3) + " Gissningar");
+        }
     }
     private int toInt(char n) {
         switch (n) {
